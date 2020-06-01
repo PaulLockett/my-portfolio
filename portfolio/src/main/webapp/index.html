@@ -2,19 +2,132 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>My Portfolio</title>
+    <title>Paul Lockett|Software Developer</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
   </head>
   <body>
     <div id="content">
-      <img src="/images/HeadShot.JPG">
-      <h1>Paul's Portfolio</h1>
-      <p>This is my portfolio.</p>
-      <p>I am a computer science major at Morehouse college in Atlanta and a 2020 STEP intern </p>
-      <p>Click to get a random fact about myself:</p>
-      <button onclick="addRandomFact()">Fact</button>
-      <div id="fact-container"></div>
+      <!-- ***********************  ABOUT *********************** -->  
+      <header>
+        <img src="/images/HeadShot.JPG">
+        <div>
+            <h1>Paul Lockett</h1>
+            <h2>Software Developer | Web designer | Photographer | Videographer</h2>
+
+            <p>I am a computer science major at Morehouse college in Atlanta and a 2020 STEP intern </p>
+            <p>Click to get a random fact about myself:</p>
+            <button onclick="addRandomFact()">Fact</button>
+            <div id="fact-container"></div>
+        </div>
+      </header> 
+      <!-- ********************  PROJECTS ********************* -->
+      <section>
+        <h2>Featured Projects</h2>
+        <p>Optional paragraph for the Projects summary. Delete if not being used.</p>
+        
+        <!-- Project 1-->
+        <section>
+        <img src="images/snacker_app photo.png" alt="description of image">
+        <h3>Snacker | WIP</h3>
+        <p>In the Process of using Dart/Flutter to make a cross-platform app that allows students to get snacks delivered to their dorm rooms.</p> 
+        <a href="https://github.com/PaulLockett/local_snack_selling_app" target="_blank">View project</a>
+        </section>
+
+        <!-- Project 2-->
+        <section>
+        <!-- <img src="images/snacker_app photo.png" alt="description of image"> -->
+        <h3>Reimagine | BESmart Hackathon submission</h3>
+        <p>Lead team in using Swift to make an app that both uses Microsoft's computer vision api to verify items in a picture and provides airport food delivery options to the user.</p>
+        <a href="https://github.com/ctuck6/BESmart" target="_blank">View project</a>
+        </section>
+
+        <!-- Project 3-->
+        <section>
+        <!-- <img src="images/snacker_app photo.png" alt="description of image"> -->
+        <h3>Tic-Tac-Toe-adventure</h3>
+        <p>Used C++ and learned how to use pointers, the reference operator, and multidimensional arrays to make a more strategic version of tic-tac-toe that expands the number of possible endgame configuration from 255,168 to 2,041,344.</p>
+        <a href="https://github.com/PaulLockett/Tic-Tac-Toe-adventure" target="_blank">View project</a>
+        </section>
+
+        <!-- Project 4-->
+        <section>
+        <!-- <img src="images/snacker_app photo.png" alt="description of image"> -->
+        <h3>Quote_Guessing_Game</h3>
+        <p>Used Python to make an author guessing game based on quote data scraped from the web using beautiful soup.</p>
+        <a href="https://github.com/PaulLockett/Quote_Guessing_Game" target="_blank">View project</a>
+        </section>
+      </section>
+      <!-- ***********************  WORK EXPERIENCE  *********************** -->
+      <section>
+
+        <h2>Work Experience</h2>
+        <p>Optional paragraph for work experience summary. Not a part of the job details. Delete if not being used.</p>
+        
+        <!-- Job 1-->
+        <section>
+        <h3>EP Intern</h3>
+        <p>Google</p>
+        <p>2019</p>
+        <p>The EP internship is a 12-week-long program that puts two interns on one project for a Google team.</p>
+        <ul>
+            <li>Built a data processing pipeline that uses C++ and parallel programming to improve testing data quality.</li>
+            <li>Used many internal tools to work on a project that handled millions of data entries.</li>
+            <li>Automated reporting for the pipeline based on data provided by SQL like commands in Python</li>
+            <li>Communicated effectively with all stakeholders of the project through in person meetings and a design doc.</li>
+        </ul>
+        </section>
+
+        <!-- Job 2-->
+        <section>
+        <h3>Intern</h3>
+        <p>Blue Fish Design Studio</p>
+        <p>2018</p>
+        <p>An internet company that makes websites, creates branding, and does social media management for small local business</p>
+        <ul>
+            <li>Drafted, edited, and published 2-3 blog post per week using google docs to increase SEO of both the website <a href="Mobileal.com" target="_blank">Mobileal.com</a> and websites of clients to the business.</li>
+            <li>Learned the workflows of web developers and creatives through one on one meetings.</li>
+            <li>Used slack to communicate effectively to managers and accelerate personal efficiency.</li>
+        </ul>
+        </section>
+      </section>
+      <!-- ******************  EDUCATION ****************** -->
+      <section >
+        
+        <h2>Education</h2>
+
+        <!-- school 1 -->
+        <section>
+        <h3>Murphy High - Mobile,AL</h3>
+        <p>International Baccalaureate program – diploma awarded , 2014 - 2018</p>
+        <p>GPA: 4.2</p>
+        </section>
+
+        <!-- school 2 -->
+        <section>
+        <h3>Morehouse College - Atlanta,GA</h3>
+        <p>B.S. Computer Science – diploma awarded , 2018 - 2022</p>
+        <p>GPA: 3.9</p>
+        <ul>
+            <li>Technical skills – Python(intermediate), C++(intermediate), Dart/Flutter(beginner), Swift(beginner)</li>
+            <li>Relevant course work –Data Structures and Algorithms, Computer Organization, Intro to computer science, Programming 1 (with GIR instructor), Programming 2</li>
+            <li>Scholarships- $40,000 Full Academic renewable scholarship, $1000 Mobile Kappa league scholarship, $1000 American Airlines Hackathon scholarship</li>
+        </ul>
+        </section>
+      </section>
+      <!-- *****************  CONTACT INFO / SOCIAL MEDIA  ***************** -->
+      <footer>
+        
+        <h2>Let's Keep in Touch!</h2>
+
+        <!-- Social media and contact links -->
+        <ul>
+            <li><a href="mailto:plockett.pl@gmail.com">plockett.pl@gmail.com</a></li>
+            <li><a href="https://plockett-step-2020.uc.r.appspot.com/" target="_blank">plockett-step-2020.uc.r.appspot.com</a></li>
+            <li><a href="https://github.com/PaulLockett" target="_blank">Github</a></li>
+            <li><a href="https://www.linkedin.com/in/paul-lockett-544992bb/" target="_blank">LinkedIn</a></li>
+        </ul>
+      </footer>
     </div>
   </body>
 </html>
