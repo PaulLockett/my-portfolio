@@ -15,14 +15,11 @@
 /**
  * Adds a random greeting to the page.
  */
-function addRandomFact() {
-  const facts =
-      ['I do some photograph', 'I do some videography', 'I have coded in 8+ different languges', 'I am from Mobile Alabama'];
+async function addRandomFact() {
 
-  // Pick a random greeting.
-  const fact = facts[Math.floor(Math.random() * facts.length)];
+  const response = await fetch('/random-fact');
+  const fact = await response.text();
 
   // Add it to the page.
-  const factContainer = document.getElementById('fact-container');
-  factContainer.innerText = fact;
+  document.getElementsByClassName('fact-container')[0].innerText = fact;
 }
