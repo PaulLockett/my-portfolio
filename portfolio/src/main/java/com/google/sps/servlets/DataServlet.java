@@ -26,16 +26,12 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/random-fact")
 public class DataServlet extends HttpServlet {
 
-  private List<String> facts;
-
-  @Override
-  public void init() {
-    facts = new ArrayList<>();
-    facts.add("I do some photograph");
-    facts.add("I do some videography");
-    facts.add("I have coded in 8+ different languges");
-    facts.add("I am from Mobile Alabama");
-  }
+  static final List<String> facts = new ArrayList<String>() {{
+    add("I do some photograph");
+    add("I do some videography");
+    add("I have coded in 8+ different languges");
+    add("I am from Mobile Alabama");
+  }};
 
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
