@@ -14,9 +14,8 @@
 
 package com.google.sps.servlets;
 
+import com.google.common.collect.ImmutableList;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -26,12 +25,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/random-fact")
 public class DataServlet extends HttpServlet {
 
-  static final List<String> facts = new ArrayList<String>() {{
-    add("I do some photograph");
-    add("I do some videography");
-    add("I have coded in 8+ different languges");
-    add("I am from Mobile Alabama");
-  }};
+  ImmutableList<String> facts =  ImmutableList.of("I do some photograph", "I do some videography", "I have coded in 8+ different languges", "I am from Mobile Alabama");
 
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
