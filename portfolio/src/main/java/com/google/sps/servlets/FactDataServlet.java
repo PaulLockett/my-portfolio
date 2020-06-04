@@ -25,7 +25,11 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/random-fact")
 public class FactDataServlet extends HttpServlet {
 
-  ImmutableList<String> facts =  ImmutableList.of("I do some photograph", "I do some videography", "I have coded in 8+ different languges", "I am from Mobile Alabama");
+  private static final ImmutableList<String> facts =  ImmutableList.of(
+    "I do some photograph",
+    "I do some videography", 
+    "I have coded in 8+ different languges", 
+    "I am from Mobile Alabama");
 
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {

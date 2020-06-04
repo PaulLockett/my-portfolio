@@ -42,7 +42,7 @@ async function showComments() {
 
 function addListElemenToDom(comment) {
   const commentListElement = document.getElementsByClassName('comment-list')[0];
-  console.log(comment);
+
   commentListElement.appendChild(createListElement(comment));
 }
 

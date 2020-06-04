@@ -27,7 +27,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/comments")
 public class CommentsDataServlet extends HttpServlet {
 
-  static final ArrayList<String> comments = new ArrayList<String>() {{
+  private static final ArrayList<String> comments = new ArrayList<String>() {{
     add("Great Job Paul!");
     add("The design of this website is amazing!");
     add("Good to see people from my alma mater doing great things!");
