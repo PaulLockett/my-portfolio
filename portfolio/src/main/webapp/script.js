@@ -43,7 +43,7 @@ async function showComments() {
 function addListElemenToDom(comment) {
   const commentListElement = document.getElementsByClassName('comment-list')[0];
 
-  commentListElement.appendChild(createListElement(comment));
+  commentListElement.appendChild(createListElement(comment)); 
 }
 
 /** Creates an <li> element containing text. */

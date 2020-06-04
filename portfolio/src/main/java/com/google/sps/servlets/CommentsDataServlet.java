@@ -27,14 +27,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/comments")
 public class CommentsDataServlet extends HttpServlet {
 
-  private static final ArrayList<String> comments = new ArrayList<String>() {{
-    add("Great Job Paul!");
-    add("The design of this website is amazing!");
-    add("Good to see people from my alma mater doing great things!");
-    add("Let me know if you are looking for another project to work on.");
-  }};
-
-  // Colection<String> facts =  ImmutableList
+  private static final ArrayList<String> comments = new ArrayList<String>();
 
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -45,10 +38,24 @@ public class CommentsDataServlet extends HttpServlet {
     response.getWriter().println(json);
   }
 
+  @Override
+  public void doPost(HttpServletRequest request, HttpServletResponse response)
+  throws IOException {
+
+    String text = request.getParameter("text-input");
+
+    if(text != null){
+      comments.add(text);
+    }
+
+    response.sendRedirect("/index.html");
+  }
+
   private String convertToJsonUsingGson(ArrayList<String> comments) {
     Gson gson = new Gson();
 
     String json = gson.toJson(comments,ArrayList.class);;
     return json;
   }
+
 }
