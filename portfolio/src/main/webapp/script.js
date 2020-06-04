@@ -23,3 +23,32 @@ async function addRandomFact() {
   // Add it to the page.
   document.getElementsByClassName('fact-container')[0].innerText = fact;
 }
+
+
+document.addEventListener('DOMContentLoaded', function() {
+   showComments();
+}, false);
+
+async function showComments() {
+
+  const response = await fetch('/comments');
+  const comments = await response.json();
+  
+  // Add it to the page.
+  for(idx in comments){
+    addListElemenToDom(comments[idx]);
+  }
+}
+
+function addListElemenToDom(comment) {
+  const commentListElement = document.getElementsByClassName('comment-list')[0];
+  console.log(comment);
+  commentListElement.appendChild(createListElement(comment));
+}
+
+/** Creates an <li> element containing text. */
+function createListElement(text) {
+  const liElement = document.createElement('li');
+  liElement.innerText = text;
+  return liElement;
+}

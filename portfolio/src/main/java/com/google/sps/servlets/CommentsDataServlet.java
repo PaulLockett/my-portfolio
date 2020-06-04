@@ -14,24 +14,41 @@
 
 package com.google.sps.servlets;
 
-import com.google.common.collect.ImmutableList;
-import java.io.IOException;
+import com.google.gson.Gson;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Collection;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/** Servlet that returns some example content. TODO: modify this file to handle comments data */
-@WebServlet("/random-fact")
-public class DataServlet extends HttpServlet {
+@WebServlet("/comments")
+public class CommentsDataServlet extends HttpServlet {
 
-  ImmutableList<String> facts =  ImmutableList.of("I do some photograph", "I do some videography", "I have coded in 8+ different languges", "I am from Mobile Alabama");
+  static final ArrayList<String> comments = new ArrayList<String>() {{
+    add("Great Job Paul!");
+    add("The design of this website is amazing!");
+    add("Good to see people from my alma mater doing great things!");
+    add("Let me know if you are looking for another project to work on.");
+  }};
+
+  // Colection<String> facts =  ImmutableList
 
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    String fact = facts.get((int) (Math.random() * facts.size()));
 
-    response.setContentType("text/html;");
-    response.getWriter().println(fact);
+    String json = convertToJsonUsingGson(comments);
+
+    response.setContentType("application/json;");
+    response.getWriter().println(json);
+  }
+
+  private String convertToJsonUsingGson(ArrayList<String> comments) {
+    Gson gson = new Gson();
+
+    String json = gson.toJson(comments,ArrayList.class);;
+    return json;
   }
 }
