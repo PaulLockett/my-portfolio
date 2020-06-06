@@ -24,20 +24,25 @@ async function addRandomFact() {
   document.getElementsByClassName('fact-container')[0].innerText = fact;
 }
 
-
-document.addEventListener('DOMContentLoaded', function() {
-   showComments();
-}, false);
-
 async function showComments() {
 
-  const response = await fetch('/comments');
+  clearListElements();
+
+  const maxComments = document.getElementsByName('maxComments')[0].value;
+
+  const response = await fetch(`/comments?maxComments=${maxComments}`);
   const comments = await response.json();
   
   // Add it to the page.
   for(idx in comments){
     addListElemenToDom(comments[idx]);
   }
+}
+
+function clearListElements(){
+  const commentListElement = document.getElementsByClassName('comment-list')[0];
+
+  commentListElement.innerHTML = '';
 }
 
 function addListElemenToDom(comment) {

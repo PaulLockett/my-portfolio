@@ -17,14 +17,16 @@ package com.google.sps.servlets;
 import com.google.appengine.api.datastore.DatastoreService;
 import com.google.appengine.api.datastore.DatastoreServiceFactory;
 import com.google.appengine.api.datastore.Entity;
+import com.google.appengine.api.datastore.FetchOptions;
 import com.google.appengine.api.datastore.PreparedQuery;
 import com.google.appengine.api.datastore.Query;
 import com.google.appengine.api.datastore.Query.SortDirection;
 import com.google.gson.Gson;
 import java.io.*;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -38,17 +40,7 @@ public class CommentsDataServlet extends HttpServlet {
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-    Query query = new Query("comment");
-
-    DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
-    PreparedQuery results = datastore.prepare(query);
-
-    comments.clear();
-    for (Entity entity : results.asIterable()) {
-      String comment = (String) entity.getProperty("text");
-
-      comments.add(comment);
-    }
+    populateCommentsList(request);
 
     String json = convertToJsonUsingGson(comments);
 
@@ -81,4 +73,21 @@ public class CommentsDataServlet extends HttpServlet {
     return json;
   }
 
+  private void populateCommentsList(HttpServletRequest request){
+    comments.clear();
+
+    int maxComments = Integer.parseInt(request.getParameter("maxComments"));
+
+    DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+    
+    Query query = new Query("comment");
+    PreparedQuery results = datastore.prepare(query);
+  
+    for (Entity entity : results.asIterable(FetchOptions.Builder.withLimit(maxComments))) {
+
+      String comment = (String) entity.getProperty("text");
+
+      comments.add(comment);
+    }
+  }
 }

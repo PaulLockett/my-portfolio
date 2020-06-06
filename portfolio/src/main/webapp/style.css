@@ -1,10 +1,14 @@
-#content {
+.content {
   margin-left: auto;
   margin-right: auto;
-  width: 650px;
+  width: 50vw;
 }
 
-#fact-container {
+header {
+  text-align: center;
+}
+
+.fact-container {
   margin-top: 20px;
 }
 
