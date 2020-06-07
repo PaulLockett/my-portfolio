@@ -39,6 +39,15 @@ async function showComments() {
   }
 }
 
+async function deleteCommentData() {
+
+  const request = new Request('/delete-data', {method: 'POST'});
+
+  const response = await fetch(request);
+
+  showComments();
+}
+
 function clearListElements(){
   const commentListElement = document.getElementsByClassName('comment-list')[0];
 
