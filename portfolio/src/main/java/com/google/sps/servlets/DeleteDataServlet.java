@@ -35,15 +35,14 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/delete-data")
 public class DeleteDataServlet extends HttpServlet {
 
+  static final Query query = new Query("comment");
+  static final DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
 
   @Override
   public void doPost(HttpServletRequest request, HttpServletResponse response)
   throws IOException {
 
     ArrayList<Entity> comments = getCommentsList(request);
-
-
-    DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
 
     for (Entity comment : comments){
       datastore.delete(comment.getKey());
@@ -53,9 +52,6 @@ public class DeleteDataServlet extends HttpServlet {
   private ArrayList<Entity> getCommentsList(HttpServletRequest request){
     ArrayList<Entity> comments = new ArrayList<Entity>();
 
-    DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
-
-    Query query = new Query("comment");
     PreparedQuery results = datastore.prepare(query);
   
     for (Entity entity : results.asIterable()) {

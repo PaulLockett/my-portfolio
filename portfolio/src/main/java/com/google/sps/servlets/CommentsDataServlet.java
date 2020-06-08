@@ -36,6 +36,8 @@ import javax.servlet.http.HttpServletResponse;
 public class CommentsDataServlet extends HttpServlet {
 
   private ArrayList<String> comments = new ArrayList<String>();
+  static final Query query = new Query("comment");
+  static final DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
 
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -59,7 +61,6 @@ public class CommentsDataServlet extends HttpServlet {
       Entity commentEntity = new Entity("comment");
       commentEntity.setProperty("text", text);
 
-      DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
       datastore.put(commentEntity);
     }
 
@@ -69,7 +70,7 @@ public class CommentsDataServlet extends HttpServlet {
   private String convertToJsonUsingGson(ArrayList<String> comments) {
     Gson gson = new Gson();
 
-    String json = gson.toJson(comments,ArrayList.class);;
+    String json = gson.toJson(comments,ArrayList.class);
     return json;
   }
 
@@ -77,15 +78,13 @@ public class CommentsDataServlet extends HttpServlet {
     comments.clear();
 
     int maxComments = Integer.parseInt(request.getParameter("maxComments"));
-
-    DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
     
-    Query query = new Query("comment");
     PreparedQuery results = datastore.prepare(query);
   
     for (Entity entity : results.asIterable(FetchOptions.Builder.withLimit(maxComments))) {
 
       String comment = (String) entity.getProperty("text");
+
 
       comments.add(comment);
     }
