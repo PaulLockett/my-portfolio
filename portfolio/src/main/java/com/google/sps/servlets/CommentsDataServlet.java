@@ -83,10 +83,13 @@ public class CommentsDataServlet extends HttpServlet {
   
     for (Entity entity : results.asIterable(FetchOptions.Builder.withLimit(maxComments))) {
 
-      String comment = (String) entity.getProperty("text");
+      if (entity.getProperty("text").toString() instanceof String){
 
+        String comment = entity.getProperty("text").toString();
 
-      comments.add(comment);
+        comments.add(comment);
+      }
+
     }
   }
 }
