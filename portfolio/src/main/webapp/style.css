@@ -1,17 +1,68 @@
+
+/* Global styles------------------------------------------ */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+body{
+  color: #040E10;
+  margin: 0;
+  padding: 0;
+}
+h2{
+  margin: 0;
+}
+ul{
+  margin: 0;
+}
 .content {
-  margin-left: auto;
-  margin-right: auto;
-  width: 50vw;
+  width: 70vw;
+  margin: 0 auto;
+  padding: 0;
 }
 
+/* Profile------------------------------------------------ */
 header {
   text-align: center;
+  background-color: black;
+  color: white;
 }
 
 .fact-container {
-  margin-top: 20px;
+  margin : 0;
 }
 
-img{
-    height: 30vh;
+.header-image{
+  height: 30vh;
+}
+
+/* Projects----------------------------------------------- */
+.projects {
+  background-color: gray;
+}
+.project-image{
+  height: 30vh;
+}
+/* Work experience---------------------------------------- */
+.work-experience {
+  background-color: black;
+  color: white;
+}
+
+/* Education---------------------------------------------- */
+.education {
+  background-color: gray;
+}
+
+/* Education---------------------------------------------- */
+.comments {
+  background-color: gray;
+}
+
+/* Contact Info------------------------------------------- */
+footer {
+  background-color: black;
+  color: white;
 }

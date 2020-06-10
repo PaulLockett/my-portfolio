@@ -6,29 +6,29 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
   </head>
-  <body>
-    <div class="content" onload="showComments()">
-      <!-- ***********************  ABOUT *********************** -->  
-      <header>
-        <img src="/images/HeadShot.JPG">
-        <div>
-            <h1>Paul Lockett</h1>
-            <h2>Software Developer | Web designer | Photographer | Videographer</h2>
+  <body onload="showComments()">
+    <!-- ***********************  ABOUT *********************** -->  
+    <header>
+      <div class="content">
+        <img class="header-image" src="/images/HeadShot.JPG">
+        <h1>Paul Lockett</h1>
+        <h2>Software Developer | Web designer | Photographer | Videographer</h2>
 
-            <p>I am a computer science major at Morehouse college in Atlanta and a 2020 STEP intern </p>
-            <p>Click to get a random fact about myself:</p>
-            <button onclick="addRandomFact()">Fact</button>
-            <div class="fact-container"></div>
-        </div>
-      </header> 
-      <!-- ********************  PROJECTS ********************* -->
-      <section>
+        <p>I am a computer science major at Morehouse college in Atlanta and a 2020 STEP intern </p>
+        <p>Click to get a random fact about myself:</p>
+        <button onclick="addRandomFact()">Fact</button>
+        <div class="fact-container"></div>
+      </div>
+    </header> 
+    <!-- ********************  PROJECTS ********************* -->
+    <section class="projects">
+      <div class="content">
         <h2>Featured Projects</h2>
         <p>Optional paragraph for the Projects summary. Delete if not being used.</p>
         
         <!-- Project 1-->
         <section>
-        <img src="images/snacker_app photo.png" alt="description of image">
+        <img class="project-image" src="images/snacker_app photo.png" alt="description of image">
         <h3>Snacker | WIP</h3>
         <p>In the Process of using Dart/Flutter to make a cross-platform app that allows students to get snacks delivered to their dorm rooms.</p> 
         <a href="https://github.com/PaulLockett/local_snack_selling_app" target="_blank">View project</a>
@@ -57,10 +57,11 @@
         <p>Used Python to make an author guessing game based on quote data scraped from the web using beautiful soup.</p>
         <a href="https://github.com/PaulLockett/Quote_Guessing_Game" target="_blank">View project</a>
         </section>
-      </section>
-      <!-- ***********************  WORK EXPERIENCE  *********************** -->
-      <section>
-
+      </div>
+    </section>
+    <!-- ***********************  WORK EXPERIENCE  *********************** -->
+    <section class="work-experience">
+      <div class="content">
         <h2>Work Experience</h2>
         <p>Optional paragraph for work experience summary. Not a part of the job details. Delete if not being used.</p>
         
@@ -90,10 +91,11 @@
             <li>Used slack to communicate effectively to managers and accelerate personal efficiency.</li>
         </ul>
         </section>
-      </section>
-      <!-- ******************  EDUCATION ****************** -->
-      <section >
-        
+      </div>
+    </section>
+    <!-- ******************  EDUCATION ****************** -->
+    <section class="education">
+      <div class="content">
         <h2>Education</h2>
 
         <!-- school 1 -->
@@ -114,31 +116,34 @@
             <li>Scholarships- $40,000 Full Academic renewable scholarship, $1000 Mobile Kappa league scholarship, $1000 American Airlines Hackathon scholarship</li>
         </ul>
         </section>
-      </section>
+      </div>
+    </section>
 
-      <section>
-          <h2>Comments</h2>
+    <!-- ******************  COMMENTS ****************** -->
+    <section class="comments">
+      <div class="content">
+        <h2>Comments</h2>
 
-          <form onsubmit="showComments();return false;">
-            <label for="MaxComments">Number of Comments to show:</label>
-            <input type="number" name="maxComments" min="1" value="1">
-            <input type="submit">
-          </form>
-          
-
-          <ul class="comment-list">
-          </ul>
-          <form action="/comments" method="POST">
-            <input type="text" name="text-input">
-            <input type="submit">
-          </form>
-
-          <button onclick="deleteCommentData()">DELETE ALL COMMENTS</button>
-
-      </section>
-      <!-- *****************  CONTACT INFO / SOCIAL MEDIA  ***************** -->
-      <footer>
+        <form onsubmit="showComments();return false;">
+          <label for="MaxComments">Number of Comments to show:</label>
+          <input type="number" name="maxComments" min="1" value="1">
+          <input type="submit">
+        </form>
         
+
+        <ul class="comment-list">
+        </ul>
+        <form action="/comments" method="POST">
+          <input type="text" name="text-input">
+          <input type="submit">
+        </form>
+
+        <button onclick="deleteCommentData()">DELETE ALL COMMENTS</button>
+      </div>
+    </section>
+    <!-- *****************  CONTACT INFO / SOCIAL MEDIA  ***************** -->
+    <footer>
+      <div class="content">
         <h2>Let's Keep in Touch!</h2>
 
         <!-- Social media and contact links -->
@@ -148,7 +153,7 @@
             <li><a href="https://github.com/PaulLockett" target="_blank">Github</a></li>
             <li><a href="https://www.linkedin.com/in/paul-lockett-544992bb/" target="_blank">LinkedIn</a></li>
         </ul>
-      </footer>
-    </div>
+       </div>
+    </footer>
   </body>
 </html>
