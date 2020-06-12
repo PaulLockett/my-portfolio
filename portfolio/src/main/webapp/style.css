@@ -1,3 +1,12 @@
+/* 
+COLOR PALETTE
+#123764 Blue
+#ff8067 Coral
+#9fa4a8 Gray
+#FFFFFF White
+#000000 Black
+ */
+
 
 /* Global styles------------------------------------------ */
 html {
@@ -10,32 +19,57 @@ body{
   color: #040E10;
   margin: 0;
   padding: 0;
+  font-size: 2vh;
+}
+h1{
+  font-size: 8vh;
+  font-family: 'Share Tech Mono';
 }
 h2{
   margin: 0;
+  font-size: 4vh;
 }
 ul{
   margin: 0;
 }
+input {
+  font-size: 2vh;
+}
+button {
+  font-size: 2vh;
+}
 .content {
   width: 70vw;
   margin: 0 auto;
-  padding: 0;
+  padding: 5% 0;
 }
 
 /* Profile------------------------------------------------ */
 header {
-  text-align: center;
+  text-align:center;
+  overflow: auto;
   background-color: black;
   color: white;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
+.title-left {
+  padding-inline-end: 0%;
+}
+.title-right {
+  padding-inline-start: 0%;
+}
 .fact-container {
   margin : 0;
 }
 
-.header-image{
-  height: 30vh;
+.header-image-center{
+  clip-path: polygon(57% 100%, 17% 0%, 100% 0%);
+  position: relative;
+  left: -2.5%;
+  width: 30vh;
 }
 
 /* Projects----------------------------------------------- */
@@ -56,13 +90,16 @@ header {
   background-color: gray;
 }
 
-/* Education---------------------------------------------- */
+/* Comments---------------------------------------------- */
 .comments {
   background-color: gray;
 }
 
 /* Contact Info------------------------------------------- */
 footer {
-  background-color: black;
+  background-color: #9fa4a8;
   color: white;
 }
+
+/* Responsive -------------------------------------------- */
+

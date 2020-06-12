@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8">
     <title>Paul Lockett|Software Developer</title>
-
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Share+Tech+Mono">
     <link rel="stylesheet" href="style.css">
 
     <script src="https://www.gstatic.com/charts/loader.js"></script>
@@ -13,15 +14,14 @@
     <!-- ***********************  ABOUT *********************** -->  
     <header>
       <div class="content">
-        <img class="header-image" src="/images/HeadShot.JPG">
-        <h1>Paul Lockett</h1>
+        <img class="header-image header-image-center" src="/images/HeadShot.JPG">
+        <h1><span class="title-left">Paul</span> <span>lockett</span></h1>
         <h2>Software Developer | Web designer | Photographer | Videographer</h2>
 
         <p>I am a computer science major at Morehouse college in Atlanta and a 2020 STEP intern </p>
         <p>Click to get a random fact about myself:</p>
         <button onclick="addRandomFact()">Fact</button>
         <div class="fact-container"></div>
-        <div class="chart-container"></div>
       </div>
     </header> 
     <!-- ********************  PROJECTS ********************* -->
@@ -141,6 +141,8 @@
           <input type="text" name="text-input">
           <input type="submit">
         </form>
+
+        <div class="chart-container"></div>
 
         <button onclick="deleteCommentData()">DELETE ALL COMMENTS</button>
       </div>
