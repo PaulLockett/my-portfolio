@@ -28,7 +28,8 @@ function drawChart() {
   const options = {
     'title': 'Zoo Animals',
     'width':500,
-    'height':400
+    'height':400,
+    'backgroundColor': 'black'
   };
 
   const chart = new google.visualization.PieChart(
@@ -55,8 +56,9 @@ async function showComments() {
   clearListElements();
 
   const maxComments = document.getElementsByName('maxComments')[0].value;
+  const languageCode = document.getElementsByClassName('language')[0].value;
 
-  const response = await fetch(`/comments?maxComments=${maxComments}`);
+  const response = await fetch(`/comments?maxComments=${maxComments}&languageCode=${languageCode}`);
   const comments = await response.json();
   
   // Add it to the page.

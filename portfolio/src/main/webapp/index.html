@@ -131,12 +131,19 @@
         <form onsubmit="showComments();return false;">
           <label for="MaxComments">Number of Comments to show:</label>
           <input type="number" name="maxComments" min="1" value="1">
+          <select class="language">
+            <option value="en">English</option>
+            <option value="zh">Chinese</option>
+            <option value="es">Spanish</option>
+            <option value="hi">Hindi</option>
+            <option value="ar">Arabic</option>
+          </select>
           <input type="submit">
         </form>
-        
-
+    
         <ul class="comment-list">
         </ul>
+
         <form action="/comments" method="POST">
           <input type="text" name="text-input">
           <input type="submit">
