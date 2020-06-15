@@ -17,19 +17,29 @@ google.charts.setOnLoadCallback(drawChart);
 
 function drawChart() {
   const data = new google.visualization.DataTable();
-  data.addColumn('string', 'Animal');
+  data.addColumn('string', 'Languages');
   data.addColumn('number', 'Count');
   data.addRows([
-    ['Lions', 10],
-    ['Tigers', 5],
-    ['Bears', 15]
+    ['English', 88],
+    ['Japanese', 1],
+    ['Chinese', 1],
+    ['French', 10],
+
   ]);
 
   const options = {
-    'title': 'Zoo Animals',
+    'title': 'My personal language use',
+    'titleTextStyle': {
+      'color': 'white'
+    },
     'width':500,
     'height':400,
-    'backgroundColor': 'black'
+    'backgroundColor': 'black',
+    'legend' : {
+      'textStyle': {
+        'color': 'white'
+      },
+    }
   };
 
   const chart = new google.visualization.PieChart(

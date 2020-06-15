@@ -79,10 +79,24 @@ header {
 .project-image{
   height: 30vh;
 }
+
+.project-item{
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  column-gap: 20px;
+  border-bottom: 4px dotted black;
+}
 /* Work experience---------------------------------------- */
 .work-experience {
   background-color: black;
   color: white;
+}
+
+.job-item{
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  column-gap: 20px;
+  border-bottom: 4px dotted gray;
 }
 
 /* Education---------------------------------------------- */
