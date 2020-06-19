@@ -12,6 +12,43 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+function drawChart() {
+  const data = new google.visualization.DataTable();
+  data.addColumn('string', 'Languages');
+  data.addColumn('number', 'Count');
+  data.addRows([
+    ['English', 88],
+    ['Japanese', 1],
+    ['Chinese', 1],
+    ['French', 10],
+
+  ]);
+
+  const options = {
+    'title': 'My personal language use',
+    'titleTextStyle': {
+      'color': 'white'
+    },
+    'width':500,
+    'height':400,
+    'backgroundColor': 'black',
+    'legend' : {
+      'textStyle': {
+        'color': 'white'
+      },
+    }
+  };
+
+  const chart = new google.visualization.PieChart(
+    document.getElementsByClassName('chart-container')[0]
+  );
+
+  chart.draw(data, options);
+}
+
 /**
  * Adds a random greeting to the page.
  */
@@ -24,14 +61,14 @@ async function addRandomFact() {
   document.getElementsByClassName('fact-container')[0].innerText = fact;
 }
 
-
-document.addEventListener('DOMContentLoaded', function() {
-   showComments();
-}, false);
-
 async function showComments() {
 
-  const response = await fetch('/comments');
+  clearListElements();
+
+  const maxComments = document.getElementsByName('maxComments')[0].value;
+  const languageCode = document.getElementsByClassName('language')[0].value;
+
+  const response = await fetch(`/comments?maxComments=${maxComments}&languageCode=${languageCode}`);
   const comments = await response.json();
   
   // Add it to the page.
@@ -40,13 +77,27 @@ async function showComments() {
   }
 }
 
+async function deleteCommentData() {
+
+  const request = new Request('/delete-data', {method: 'POST'});
+
+  const response = await fetch(request);
+
+  showComments();
+}
+
+function clearListElements(){
+  const commentListElement = document.getElementsByClassName('comment-list')[0];
+
+  commentListElement.innerHTML = '';
+}
+
 function addListElemenToDom(comment) {
   const commentListElement = document.getElementsByClassName('comment-list')[0];
 
   commentListElement.appendChild(createListElement(comment)); 
 }
 
-/** Creates an <li> element containing text. */
 function createListElement(text) {
   const liElement = document.createElement('li');
   liElement.innerText = text;

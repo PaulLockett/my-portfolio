@@ -3,97 +3,133 @@
   <head>
     <meta charset="UTF-8">
     <title>Paul Lockett|Software Developer</title>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Share+Tech+Mono">
     <link rel="stylesheet" href="style.css">
+
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="script.js"></script>
   </head>
-  <body>
-    <div id="content">
-      <!-- ***********************  ABOUT *********************** -->  
-      <header>
-        <img src="/images/HeadShot.JPG">
-        <div>
-            <h1>Paul Lockett</h1>
-            <h2>Software Developer | Web designer | Photographer | Videographer</h2>
+  <body onload="showComments()">
+    <!-- ***********************  ABOUT *********************** -->  
+    <header>
+      <div class="content">
+        <img class="header-image header-image-center" src="/images/HeadShot.JPG">
+        <h1><span class="title-left">Paul</span> <span>lockett</span></h1>
+        <h2>Software Developer | Web designer | Photographer | Videographer</h2>
 
-            <p>I am a computer science major at Morehouse college in Atlanta and a 2020 STEP intern </p>
-            <p>Click to get a random fact about myself:</p>
-            <button onclick="addRandomFact()">Fact</button>
-            <div class="fact-container"></div>
-        </div>
-      </header> 
-      <!-- ********************  PROJECTS ********************* -->
-      <section>
+        <p>I am a computer science major at Morehouse college in Atlanta and a 2020 STEP intern </p>
+        <p>Click to get a random fact about myself:</p>
+        <button onclick="addRandomFact()">Fact</button>
+        <div class="fact-container"></div>
+      </div>
+    </header> 
+    <!-- ********************  PROJECTS ********************* -->
+    <section class="projects">
+      <div class="content">
         <h2>Featured Projects</h2>
-        <p>Optional paragraph for the Projects summary. Delete if not being used.</p>
         
         <!-- Project 1-->
-        <section>
-        <img src="images/snacker_app photo.png" alt="description of image">
-        <h3>Snacker | WIP</h3>
-        <p>In the Process of using Dart/Flutter to make a cross-platform app that allows students to get snacks delivered to their dorm rooms.</p> 
-        <a href="https://github.com/PaulLockett/local_snack_selling_app" target="_blank">View project</a>
+        <section class="project-item">
+          <div class="project-details">
+            <h3>Snacker | WIP</h3>
+            <img class="project-image" src="images/snacker_app photo.png" alt="sreenshot of app homepage">
+          </div>
+
+          <div class="project-summary">
+            <p>In the Process of using Dart/Flutter to make a cross-platform app that allows students to get snacks delivered to their dorm rooms.</p> 
+            <a href="https://github.com/PaulLockett/local_snack_selling_app" target="_blank">View project</a>
+          </div>
         </section>
 
         <!-- Project 2-->
-        <section>
-        <!-- <img src="images/snacker_app photo.png" alt="description of image"> -->
-        <h3>Reimagine | BESmart Hackathon submission</h3>
-        <p>Lead team in using Swift to make an app that both uses Microsoft's computer vision api to verify items in a picture and provides airport food delivery options to the user.</p>
-        <a href="https://github.com/ctuck6/BESmart" target="_blank">View project</a>
+        <section class="project-item">
+          <div class="project-details">
+            <h3>Reimagine | BESmart Hackathon submission</h3>
+            <img class="project-image" src="images/snacker_app photo.png" alt="Placeholder image">
+          </div>
+
+          <div class="project-summary">
+            <p>Lead team in using Swift to make an app that both uses Microsoft's computer vision api to verify items in a picture and provides airport food delivery options to the user.</p>
+            <a href="https://github.com/ctuck6/BESmart" target="_blank">View project</a>
+          </div>
         </section>
 
         <!-- Project 3-->
-        <section>
-        <!-- <img src="images/snacker_app photo.png" alt="description of image"> -->
-        <h3>Tic-Tac-Toe-adventure</h3>
-        <p>Used C++ and learned how to use pointers, the reference operator, and multidimensional arrays to make a more strategic version of tic-tac-toe that expands the number of possible endgame configuration from 255,168 to 2,041,344.</p>
-        <a href="https://github.com/PaulLockett/Tic-Tac-Toe-adventure" target="_blank">View project</a>
+        <section class="project-item">
+          <div class="project-details">
+            <h3>Tic-Tac-Toe-adventure</h3>
+            <img class="project-image" src="images/snacker_app photo.png" alt="Placeholder image">
+          </div>
+
+          <div class="project-summary">
+            <p>Used C++ and learned how to use pointers, the reference operator, and multidimensional arrays to make a more strategic version of tic-tac-toe that expands the number of possible endgame configuration from 255,168 to 2,041,344.</p>
+            <a href="https://github.com/PaulLockett/Tic-Tac-Toe-adventure" target="_blank">View project</a>
+          </div>
+
         </section>
 
         <!-- Project 4-->
-        <section>
-        <!-- <img src="images/snacker_app photo.png" alt="description of image"> -->
-        <h3>Quote_Guessing_Game</h3>
-        <p>Used Python to make an author guessing game based on quote data scraped from the web using beautiful soup.</p>
-        <a href="https://github.com/PaulLockett/Quote_Guessing_Game" target="_blank">View project</a>
-        </section>
-      </section>
-      <!-- ***********************  WORK EXPERIENCE  *********************** -->
-      <section>
+        <section class="project-item">
+          <div class="project-details">
+            <h3>Quote_Guessing_Game</h3>
+            <img class="project-image" src="images/snacker_app photo.png" alt="Placeholder image">
+          </div>
 
+          <div class="project-summary">
+            <p>Used Python to make an author guessing game based on quote data scraped from the web using beautiful soup.</p>
+            <a href="https://github.com/PaulLockett/Quote_Guessing_Game" target="_blank">View project</a>
+          </div>
+
+        </section>
+      </div>
+    </section>
+    <!-- ***********************  WORK EXPERIENCE  *********************** -->
+    <section class="work-experience">
+      <div class="content">
         <h2>Work Experience</h2>
-        <p>Optional paragraph for work experience summary. Not a part of the job details. Delete if not being used.</p>
         
         <!-- Job 1-->
-        <section>
-        <h3>EP Intern</h3>
-        <p>Google</p>
-        <p>2019</p>
-        <p>The EP internship is a 12-week-long program that puts two interns on one project for a Google team.</p>
-        <ul>
-            <li>Built a data processing pipeline that uses C++ and parallel programming to improve testing data quality.</li>
-            <li>Used many internal tools to work on a project that handled millions of data entries.</li>
-            <li>Automated reporting for the pipeline based on data provided by SQL like commands in Python</li>
-            <li>Communicated effectively with all stakeholders of the project through in person meetings and a design doc.</li>
-        </ul>
+        <section class="job-item">
+          <div class="job-details">
+            <h3>EP Intern</h3>
+            <p>Google</p>
+            <p>2019</p>
+          </div>
+          
+          <div class="job-decription">
+            <p>The EP internship is a 12-week-long program that puts two interns on one project for a Google team.</p>
+            <ul>
+                <li>Built a data processing pipeline that uses C++ and parallel programming to improve testing data quality.</li>
+                <li>Used many internal tools to work on a project that handled millions of data entries.</li>
+                <li>Automated reporting for the pipeline based on data provided by SQL like commands in Python</li>
+                <li>Communicated effectively with all stakeholders of the project through in person meetings and a design doc.</li>
+            </ul>
+          </div>
         </section>
 
         <!-- Job 2-->
-        <section>
-        <h3>Intern</h3>
-        <p>Blue Fish Design Studio</p>
-        <p>2018</p>
-        <p>An internet company that makes websites, creates branding, and does social media management for small local business</p>
-        <ul>
-            <li>Drafted, edited, and published 2-3 blog post per week using google docs to increase SEO of both the website <a href="Mobileal.com" target="_blank">Mobileal.com</a> and websites of clients to the business.</li>
-            <li>Learned the workflows of web developers and creatives through one on one meetings.</li>
-            <li>Used slack to communicate effectively to managers and accelerate personal efficiency.</li>
-        </ul>
+        <section class="job-item">
+          <div class="job-details">
+            <h3>Intern</h3>
+            <p>Blue Fish Design Studio</p>
+            <p>2018</p>
+          </div>
+
+          <div class="job-decription">
+            <p>An internet company that makes websites, creates branding, and does social media management for small local business</p>
+            <ul>
+                <li>Drafted, edited, and published 2-3 blog post per week using google docs to increase SEO of both the website <a href="Mobileal.com" target="_blank">Mobileal.com</a> and websites of clients to the business.</li>
+                <li>Learned the workflows of web developers and creatives through one on one meetings.</li>
+                <li>Used slack to communicate effectively to managers and accelerate personal efficiency.</li>
+            </ul>
+          </div>
         </section>
-      </section>
-      <!-- ******************  EDUCATION ****************** -->
-      <section >
-        
+      </div>
+    </section>
+    <!-- ******************  EDUCATION ****************** -->
+    <section class="education">
+      <div class="content">
         <h2>Education</h2>
 
         <!-- school 1 -->
@@ -114,20 +150,43 @@
             <li>Scholarships- $40,000 Full Academic renewable scholarship, $1000 Mobile Kappa league scholarship, $1000 American Airlines Hackathon scholarship</li>
         </ul>
         </section>
-      </section>
+      </div>
+    </section>
 
-      <section>
-          <h2>Comments</h2>
-          <ul class="comment-list">
-          </ul>
-          <form action="/comments" method="POST"> 
-            <input type="text" name="text-input">
-            <input type="submit">
-          </form>
-      </section>
-      <!-- *****************  CONTACT INFO / SOCIAL MEDIA  ***************** -->
-      <footer>
-        
+    <!-- ******************  COMMENTS ****************** -->
+    <section class="comments">
+      <div class="content">
+        <h2>Comments</h2>
+
+        <form onsubmit="showComments();return false;">
+          <label for="MaxComments">Number of Comments to show:</label>
+          <input type="number" name="maxComments" min="1" value="1">
+          <select class="language">
+            <option value="en">English</option>
+            <option value="zh">Chinese</option>
+            <option value="es">Spanish</option>
+            <option value="hi">Hindi</option>
+            <option value="ar">Arabic</option>
+          </select>
+          <input type="submit">
+        </form>
+    
+        <ul class="comment-list">
+        </ul>
+
+        <form action="/comments" method="POST">
+          <input type="text" name="text-input">
+          <input type="submit">
+        </form>
+
+        <div class="chart-container"></div>
+
+        <button onclick="deleteCommentData()">DELETE ALL COMMENTS</button>
+      </div>
+    </section>
+    <!-- *****************  CONTACT INFO / SOCIAL MEDIA  ***************** -->
+    <footer>
+      <div class="content">
         <h2>Let's Keep in Touch!</h2>
 
         <!-- Social media and contact links -->
@@ -137,7 +196,7 @@
             <li><a href="https://github.com/PaulLockett" target="_blank">Github</a></li>
             <li><a href="https://www.linkedin.com/in/paul-lockett-544992bb/" target="_blank">LinkedIn</a></li>
         </ul>
-      </footer>
-    </div>
+       </div>
+    </footer>
   </body>
 </html>
